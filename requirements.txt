@@ -40,7 +40,6 @@ Pillow==7.0.0
 platformdirs==2.4.0
 pycparser==2.19
 pydub==0.25.1
-pygame==1.9.6
 Pygments==2.3.1
 pyodbc==4.0.26
 pyOpenSSL==21.0.0
