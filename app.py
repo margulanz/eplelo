@@ -100,7 +100,7 @@ class Matches(db.Model):
 
 @app.route('/')
 def index():
-	scheduled_check()
+	#scheduled_check()
 	teams = Teams.query.order_by(Teams.rating.desc()).limit(20)
 	return render_template('index.html',teams = teams)
 
@@ -155,6 +155,6 @@ def scheduled_check():
 			
 
 if __name__ == '__main__':
-	scheduler.add_job(id = "parse", func = scheduled_check,trigger = 'interval',weeks = 1,max_instances = 1,misfire_grace_time=None)
+	scheduler.add_job(id = "parse", func = scheduled_check,trigger = 'interval',days = 1,max_instances = 1,misfire_grace_time=None)
 	scheduler.start()
 	app.run(debug = True)
