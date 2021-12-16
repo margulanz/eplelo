@@ -2,7 +2,7 @@ APScheduler==3.8.1
 beautifulsoup4==4.7.1
 bs4==0.0.1
 urllib3==1.25.9
-Werkzeug==1.0.1
+Werkzeug==2.0.2
 uwsgi
 
 
