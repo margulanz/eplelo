@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+
+{% block head%}
+
+
+{% endblock%}
+
+{% block body%} 
+
+
+
+
+<table class="styled-table">
+	<thead>
+		<tr>
+			<th>Team Name</th>
+			<th>Elo rating</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for team in teams%}
+		
+
+		<tr>
+			<td>{{team.team_name}}</td>
+			<td>{{team.rating}}</td>
+			
+		</tr>
+		{% endfor %}
+	</tbody>
+
+
+</table>
+
+{% endblock%}
