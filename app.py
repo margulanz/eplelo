@@ -100,7 +100,7 @@ class Matches(db.Model):
 
 @app.route('/')
 def index():
-	scheduled_check()
+	#scheduled_check()
 	teams = Teams.query.order_by(Teams.rating.desc()).limit(20)
 	return render_template('index.html',teams = teams)
 
