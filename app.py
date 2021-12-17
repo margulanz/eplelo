@@ -155,6 +155,6 @@ def scheduled_check():
 			
 
 if __name__ == '__main__':
-	scheduler.add_job(id = "parse", func = scheduled_check,trigger = 'interval',hours = 2,max_instances = 1,misfire_grace_time=None)
+	scheduler.add_job(id = "parse", func = scheduled_check,trigger = 'interval',hours = 2,max_instances = 1,misfire_grace_time=None,next_run_time=datetime.now())
 	scheduler.start()
 	app.run(debug = True)
