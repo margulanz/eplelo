@@ -150,7 +150,8 @@ def scheduled_check():
 				db.session.commit()
 			
 			# Checks if season ended. If yes, iterates season
-			if Matches.query.filter(or_(Matches.score == 'resch.',Matches.score == '-:-')).count() == 0: # IF number of matches ends then iterate to the next season
+			if Matches.query.filter(or_(Matches.score == 'resch.',Matches.score == '-:-')).count() == 0: 
+			
 				season += 1
 			
 
