@@ -11,27 +11,30 @@
 	<div class = "text">
 		
 		<p>Elo rating system<br>
-The Elo rating system is a method for calculating the relative skill levels of players in zero-sum games such as chess. It is named after its creator Arpad Elo, a Hungarian-American physics professor.<br>
-This website implements the same approach to the English Premiere League clubs. It does not consider such factors as home team advantage. Ratings of the English teams take into account all official matches starting from the season 1992-1993. Relegation-promotion issue is managed by setting relegated team to the 1200 rating and setting promoted team to the 1500 rating. <br>
-Basic Elo formula:<br>
+The Elo rating system is a method for calculating the relative skill levels of players in zero-sum games such as chess. It is named after its creator Arpad Elo, a Hungarian-American physics professor.</p>
+
+<p>This website implements the same approach to the English Premiere League clubs. It does not consider such factors as home team advantage. Ratings of the English teams take into account all official matches starting from the season 1992-1993. Relegation-promotion issue is managed by setting relegated team to the 1200 rating and setting promoted team to the 1500 rating.</p>
+
+<p>Basic Elo formula:<br>
 Rn = Ro + P<br>
-Where,<br>
+Where<br>
 Rn &ndash; new rating<br>
 Ro &ndash; old rating<br>
-P &ndash; change of rating<br>
-Change of rating is calculated by this formula:<br>
+P &ndash; change of rating</p>
+
+<p>Change of rating is calculated by this formula:<br>
 P = K*G*(W-We)<br>
-Where,<br>
+Where<br>
 K &ndash; tournament constant (website uses 40 for EPL),<br>
 G &ndash; goal difference constant<br>
 W &ndash; match result<br>
-We &ndash; expected match result<br>
-Expected match result is calculated by this formula:<br>
+We &ndash; expected match result</p>
+
+<p>Expected match result is calculated by this formula:<br>
 We = 1 / (10^(-dr/400)+1)<br>
-Where,<br>
+Where<br>
 dr &ndash; rating difference.<br>
 </p>
-		
 	</div>
 
 
