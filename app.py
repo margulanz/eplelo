@@ -53,16 +53,20 @@ def match_parser(season): # Yields each match of the giver season
 				match_date = match_date_prev
 			results = []
 			for el in match_info:
+
 				text = (el.text.strip())
 				if '(' in el.text.strip():
 					results.append(text[0:text.index('(')-1])
 					continue
 				if text == '':
 					continue
+
 				results.append(text)
+
 			results.append(match_round)
 			results.append(match_date)
-
+			if parser.parse(results[4]).date()==datetime.today().date():
+				continue
 			yield results
 
 
@@ -121,7 +125,8 @@ def scheduled_check():
 			score  = match[2]
 			match_round = match[3]
 			match_date = parser.parse(match[4])
-
+			if match_date.date() == datetime.today().date():
+				continue
 			# Checks if match exist. If not, add match then continue
 			match_exist = db.session.query(Matches).filter_by(team_a = team_a,team_b = team_b).first() is not None
 			if not match_exist:
