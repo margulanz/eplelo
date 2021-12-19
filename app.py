@@ -9,7 +9,7 @@ from flask_apscheduler import APScheduler
 from sqlalchemy import or_
 
 season = 2021
-time = datetime.now()
+
 
 def elo_change(team_a,team_b,team_a_rank,team_b_rank,round,team_a_score,team_b_score):
 	K = 40
@@ -101,10 +101,9 @@ class Matches(db.Model):
 
 @app.route('/')
 def index():
-	global time 
-	#scheduled_check()
+	scheduled_check()
 	teams = Teams.query.order_by(Teams.rating.desc()).limit(20)
-	return render_template('index.html',teams = teams, time = time,next_time = time + timedelta(minutes = 29))
+	return render_template('index.html',teams = teams)
 
 @app.route('/about')
 def about():
@@ -112,8 +111,6 @@ def about():
 
 
 def scheduled_check():
-	global time
-	time = datetime.now()
 	global season
 	cur_season = str(season)+'-'+str(season+1)
 	print(season)
