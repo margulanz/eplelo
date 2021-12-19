@@ -8,7 +8,7 @@ from flask_apscheduler import APScheduler
 from sqlalchemy import or_
 
 season = 2021
-time = datetime.datetime.now().time()
+time = datetime.now().time()
 
 def elo_change(team_a,team_b,team_a_rank,team_b_rank,round,team_a_score,team_b_score):
 	K = 40
@@ -112,7 +112,7 @@ def about():
 
 def scheduled_check():
 	global time
-	time = datetime.datetime.now().time()
+	time = datetime.now().time()
 	global season
 	cur_season = str(season)+'-'+str(season+1)
 	print(season)
