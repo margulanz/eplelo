@@ -104,7 +104,7 @@ def index():
 	global time 
 	#scheduled_check()
 	teams = Teams.query.order_by(Teams.rating.desc()).limit(20)
-	return render_template('index.html',teams = teams, time = time,next_time = time + timedelta(minutes = 59))
+	return render_template('index.html',teams = teams, time = time,next_time = time + timedelta(minutes = 29))
 
 @app.route('/about')
 def about():
@@ -160,6 +160,6 @@ def scheduled_check():
 			
 
 if __name__ == '__main__':
-	scheduler.add_job(id = "parse", func = scheduled_check,trigger = 'interval',minutes = 59,max_instances = 1,misfire_grace_time=None,next_run_time=datetime.now())
+	scheduler.add_job(id = "parse", func = scheduled_check,trigger = 'interval',minutes = 29,max_instances = 1,misfire_grace_time=None,next_run_time=datetime.now())
 	scheduler.start()
 	app.run(debug = True)
