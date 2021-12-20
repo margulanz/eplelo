@@ -65,7 +65,7 @@ def match_parser(season): # Yields each match of the giver season
 
 			results.append(match_round)
 			results.append(match_date)
-			if parser.parse(results[4]).date()==datetime.today().date():
+			if parser.parse(results[4]).date()==datetime.today().date(): # Do not check todays matches
 				continue
 			yield results
 
