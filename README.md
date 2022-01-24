@@ -1,1 +1,1 @@
-Using elo ranking system for EPL teams
+# Elo ranking for English Premiere League teams
